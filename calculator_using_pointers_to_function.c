@@ -27,10 +27,26 @@ int main(){
 	printf("enter the first number:");
 	scanf("%d",&a);
 	printf("enter the math symbles for example:\nadd for addition\nsub for subtraction\nmult for multiblication\ndiv for division\n Write here: ");
-	scanf("%s",&c);
+	scanf("%s",c);
 	printf("enter the last number: ");
 	scanf("%d",&b);
 
-	mat(c,a,b);
+
+
+	if (c[0] == 'a'){
+		mat(add ,a ,b);
+	}
+	else if (c[0] =='s'){
+		mat(sub ,a ,b);
+	}
+	else if (c[0] == 'm'){
+		mat(mult ,a ,b);
+	}
+	else if (c[0] =='d'){
+		mat(div ,a ,b);
+	}
+	else
+		printf("put a valid mathematical operators");
+
 	return 0;
 }
