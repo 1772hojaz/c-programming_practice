@@ -9,7 +9,7 @@ int main(int argC, char *argV[]){
 	vec[2] = 17;
 	vec[3] = 20;
 	
-	printf("vec[0] = %d\n vec[1] = %d\n vec[2] = %d\n vec[3] = %d\n", vec[0], vec[1], vec[2], vec[3]);
+	printf("vec[0] = %d\nvec[1] = %d\nvec[2] = %d\nvec[3] = %d\n", vec[0], vec[1], vec[2], vec[3]);
 	free(vec);
 	return 0;
 }
