@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <string.h>
+
+int add(int a, int b) {
+    return a + b;
+}
+
+int sub(int a, int b) {
+    return a - b;
+}
+
+int mul(int a, int b) {
+    return a * b;
+}
+
+int div(int a, int b) {
+    if (b == 0) {
+        printf("Division by zero is not allowed.\n");
+        return 0;
+    }
+    return a / b;
+}
+
+void mat(int (*fn)(int, int), int a, int b) {
+    int result = fn(a, b);
+    printf("The result is %d\n", result);
+}
+
+int main() {
+    int a, b;
+    char c[4];
+    int (*operation)(int, int) = NULL;
+
+    printf("Write the first number: ");
+    scanf("%d", &a);
+
+    printf("Write the mathematical operation (add, sub, mul, div): ");
+    scanf("%s", c);
+
+    printf("Write the second number: ");
+    scanf("%d", &b);
+
+    if (strcmp(c, "add") == 0) {
+        operation = add;
+    } else if (strcmp(c, "sub") == 0) {
+        operation = sub;
+    } else if (strcmp(c, "mul") == 0) {
+        operation = mul;
+    } else if (strcmp(c, "div") == 0) {
+        operation = div;
+    } else {
+        printf("Please enter a correct mathematical operation.\n");
+        return 1;
+    }
+
+    mat(operation, a, b);
+    return 0;
+}
